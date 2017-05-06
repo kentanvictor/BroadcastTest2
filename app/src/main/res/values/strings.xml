@@ -3,4 +3,5 @@
     <string name="tex1">Account:</string>
     <string name="tex2">password:</string>
     <string name="but1">Login</string>
+    <string name="main_but1">Send force offline broadcast</string>
 </resources>
