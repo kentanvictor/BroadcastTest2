@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">BroadcastTest2</string>
+    <string name="tex1">Account:</string>
+    <string name="tex2">password:</string>
+    <string name="but1">Login</string>
 </resources>

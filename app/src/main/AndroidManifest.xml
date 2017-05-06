@@ -21,9 +21,11 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter android:priority="100">
-                <action android:name="com.example.dell.paomadeng.BroadCastReceiver"/>
+                <action android:name="com.example.dell.paomadeng.BroadCastReceiver" />
             </intent-filter>
         </receiver>
+
+        <activity android:name=".Activity.LoginActivity"></activity>
     </application>
 
 </manifest>
