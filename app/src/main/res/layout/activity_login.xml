@@ -44,6 +44,7 @@
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -59,3 +60,4 @@
         android:text="@string/but1" />
 
 </LinearLayout>
+<!--使用LinearLayout编写登录布局，最外层是LinearLayout，里面包含3行直接子元素。-->
