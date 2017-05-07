@@ -19,7 +19,7 @@ public class BaseActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        ActivityCollector.addActivity(this);
+        ActivityCollector.addActivity(this);//不可以在onCreate()方法中注册，因为这样会使得在后台的处于onStop()的activity也接收到
     }
     /*
     * 注册ForeceOffLineReceiver广播接收器，重写onCreate()和onResume()这两个生命周期函数
