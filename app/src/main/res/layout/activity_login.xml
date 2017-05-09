@@ -62,8 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/remeber_pass"
-        android:text="@string/chB1"
-        />
+        android:text="@string/chB1" />
     <!--使用一个新的控件CheckBox。这是一个复选框的控件，用户可以通过点击的方式来进行选中和取消-->
 
     <Button

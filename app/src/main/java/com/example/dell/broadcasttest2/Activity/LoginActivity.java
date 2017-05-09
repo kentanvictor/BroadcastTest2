@@ -26,21 +26,24 @@ public class LoginActivity extends BaseActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        pref = PreferenceManager.getDefaultSharedPreferences(this);//获取SharedPreferences的对象
         accountEdit = (EditText) findViewById(R.id.account);
         passwordEdit = (EditText) findViewById(R.id.password);
         rememberPass = (CheckBox) findViewById(R.id.remeber_pass);
         login = (Button) findViewById(R.id.login);
-        boolean isRemember = pref.getBoolean("remember_password",false);
-        if(isRemember)
+        boolean isRemember = pref.getBoolean("remember_password",false);//获取remember_password这个键对应的值
+        //一开始不存在，就用false作为初始化
+
+        if(isRemember)//当inRemember为1时
         {
             //将账号与密码都设置到文本框中
             String account = pref.getString("account","");
             String password = pref.getString("password","");
             accountEdit.setText(account);
             passwordEdit.setText(password);
-            rememberPass.setChecked(true);
+            rememberPass.setChecked(true);//将复选框设置为选中
         }
+
         login.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -51,15 +54,15 @@ public class LoginActivity extends BaseActivity
                 if(account.equals("admin")&&password.equals("123456"))
                 {
                     editor = pref.edit();
-                    if(rememberPass.isChecked())
+                    if(rememberPass.isChecked())//登录成功之后调用isChecked()方法来检查复选框是否被选中
                     {
                         //检查复选框是否被选中
-                        editor.putBoolean("remember_password",true);
-                        editor.putString("account",account);
-                        editor.putString("password",password);
+                        editor.putBoolean("remember_password",true);//将remember_password设置为true
+                        editor.putString("account",account);//把account值存到SharedPreferences文件中
+                        editor.putString("password",password);//把password值存到SharedPreferences文件中
                     }else
                     {
-                        editor.clear();
+                        editor.clear();//没有选中，清空SharedPreferences文件
                     }
                     editor.apply();
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
@@ -72,3 +75,8 @@ public class LoginActivity extends BaseActivity
         });
     }
 }
+/**
+ * 因为数据是以明文的形式存储在SharedPreferences文件中的，所以很容易被人盗取
+ * 因此
+ * 在正式项目里还需要结合一定的加密算法来对密码进行保护才行
+* */
