@@ -1,4 +1,4 @@
-package com.example.dell.broadcasttest2.Activity;
+package com.example.dell.broadcasttest2.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -10,7 +10,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.dell.broadcasttest2.BroadCastReceiver.MainActivity;
+import com.example.dell.broadcasttest2.base.BaseActivity;
 import com.example.dell.broadcasttest2.R;
 
 public class LoginActivity extends BaseActivity

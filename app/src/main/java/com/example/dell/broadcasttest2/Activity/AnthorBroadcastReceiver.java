@@ -1,4 +1,4 @@
-package com.example.dell.broadcasttest2.Activity;
+package com.example.dell.broadcasttest2.activity;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;

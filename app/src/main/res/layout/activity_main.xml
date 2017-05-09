@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.dell.broadcasttest2.BroadCastReceiver.MainActivity">
+    tools:context="com.example.dell.broadcasttest2.activity.MainActivity">
 
     <Button
         android:id="@+id/force_offline"

@@ -1,4 +1,4 @@
-package com.example.dell.broadcasttest2.Activity;
+package com.example.dell.broadcasttest2.base;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -9,7 +9,10 @@ import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 
-/**
+import com.example.dell.broadcasttest2.activity.ActivityCollector;
+import com.example.dell.broadcasttest2.activity.LoginActivity;
+
+/*
  * Created by DELL on 2017/5/6.
  */
 
@@ -19,7 +22,8 @@ public class BaseActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        ActivityCollector.addActivity(this);//不可以在onCreate()方法中注册，因为这样会使得在后台的处于onStop()的activity也接收到
+        ActivityCollector.addActivity(this);//addActivity需要写到onCreate()方法中才能够被实现
+        //不可以在onCreate()方法中注册广播，因为这样会使得在后台的处于onStop()的activity也接收到
     }
     /*
     * 注册ForeceOffLineReceiver广播接收器，重写onCreate()和onResume()这两个生命周期函数
@@ -52,7 +56,7 @@ public class BaseActivity extends AppCompatActivity{
     protected void onDestroy()
     {
         super.onDestroy();
-        ActivityCollector.removeActivity(this);
+        ActivityCollector.removeActivity(this);//removeActivity方法也需要写到OnDestroy里面才能够被实现
     }
 }
 class ForceOffLineReceiver extends BroadcastReceiver{

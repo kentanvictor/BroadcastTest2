@@ -9,7 +9,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.dell.broadcasttest2.Activity.LoginActivity">
+    tools:context="com.example.dell.broadcasttest2.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,8 +25,10 @@
 
         <EditText
             android:id="@+id/account"
+            android:labelFor="@id/account"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:hint="@string/edi1"
             android:layout_gravity="center_vertical"
             android:layout_weight="1" />
     </LinearLayout>
@@ -45,6 +47,7 @@
 
         <EditText
             android:id="@+id/password"
+            android:labelFor="@id/password"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
