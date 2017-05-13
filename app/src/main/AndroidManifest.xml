@@ -9,10 +9,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
-           <!-- <intent-filter>
+
+            <!--
+                <intent-filter>
                 <!-<action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />-->
-            <!--</intent-filter>-->
+                <category android:name="android.intent.category.LAUNCHER" />
+            -->
+            <!-- </intent-filter> -->
         </activity>
 
         <receiver
@@ -26,12 +29,22 @@
 
         <activity android:name=".activity.LoginActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter><!--上面的intent-filter是用来设置主界面的，
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!--
+上面的intent-filter是用来设置主界面的，
             只有在对应的activity下面设置了intent-filter才能表示这个是主界面，如果没有的话，就会按照默认的方式，
-            认为上面的是主界面-->
+            认为上面的是主界面
+            -->
         </activity>
+
+        <provider
+            android:name=".DatabaseProvider"
+            android:authorities="com.example.dell.databasetest.provider"
+            android:enabled="true"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
