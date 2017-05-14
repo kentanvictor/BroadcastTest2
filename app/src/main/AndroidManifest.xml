@@ -40,11 +40,6 @@
             -->
         </activity>
 
-        <provider
-            android:name=".DatabaseProvider"
-            android:authorities="com.example.dell.databasetest.provider"
-            android:enabled="true"
-            android:exported="true"></provider>
     </application>
 
 </manifest>
